@@ -1,0 +1,39 @@
+body {
+    background-color:cornflowerblue;
+}
+
+h1 {
+    text-align: center;
+}
+
+#theme-change {
+    text-align: center;
+}
+
+#generate-activity {
+    text-align: center;
+}
+
+.activity {
+    background-color: #5676d1;
+    min-width: 100px;
+    text-align: center;
+    padding: 25px;
+    border-radius: 6px;
+    border: 10px #3e3d7c solid;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .05);
+}
+
+.dark-mode {
+    background-color: darkblue;
+}
+
+#favorites-bar {
+    background-color: #5676d1;
+    min-width: 100px;
+    text-align: center;
+    padding: 25px;
+    border-radius: 6px;
+    border: 10px #3e3d7c solid;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .05);
+}
