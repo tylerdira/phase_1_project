@@ -6,8 +6,18 @@ h1 {
     text-align: center;
 }
 
-#theme-change {
+h2 {
     text-align: center;
+}
+
+#theme-change {
+    background-color: #5676d1;
+    width: 100px;
+    margin-left: auto;;
+}
+
+#theme-change:hover {
+    background: rgb(162, 181, 223);
 }
 
 #generate-activity {
@@ -36,4 +46,25 @@ h1 {
     border-radius: 6px;
     border: 10px #3e3d7c solid;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, .05);
+}
+
+.favorite-activity {
+    width: 20px;
+    height: 30px;
+    box-shadow: 0px 0px 10px;
+}
+
+.favorite-activity {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 2em 0em;
+}
+
+#favorite{
+    border-radius: 40px;
+    background-color: rgb(162, 181, 223);
+}
+#favorite:hover{
+    background-color: gold;
 }
