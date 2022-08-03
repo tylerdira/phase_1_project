@@ -50,5 +50,27 @@ addToFavorites.addEventListener('click', ()=> {
     const favoriteActivityContainer = document.getElementById('favorites-bar')
     favoriteActivity.textContent = activityDiv.innerText
     favoriteActivityContainer.append(favoriteActivity)
-})
+favoriteActivity.forEach()
 
+const deleteButton = document.createElement('button')
+favoriteActivity.append(deleteButton)
+deleteButton.textContent = "delete"
+deleteButton.addEventListener('click',()=>{
+ console.log("I was clicked")
+})
+// for(let i=0;i<favoriteActivity.length; i++){
+//     deleteButton.addEventListener('click',function(event){
+//         favoriteActivity.remove()
+
+//     })
+
+// }
+// favoriteActivityContainer.forEach(deleteFav =>{
+//     deleteButton.addEventListener("click",handleDelete)
+//     favoriteActivity.remove()
+//     })
+// deleteFav()
+ })
+ //function handleDelete()
+
+// handleDelete
