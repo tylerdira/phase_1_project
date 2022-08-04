@@ -9,16 +9,19 @@
 
 //Global Variables
 const activityDiv = document.querySelector('.activity')
+const favoriteActivityContainer = document.getElementById('favorites-bar')
+plsUserInput = document.getElementById('userInput')
+const favorites = []
+
 
 
 const apiData = {
     url: 'https://www.boredapi.com/api/',
-    type:'activity',
-    price: '0'
+    type: [],
 }
 
-const {url, type, price} = apiData
-const apiUrl = `${url}${type}?price=${price}`
+const {url, type} = apiData
+const apiUrl = `${url}activity?type=${type}`
 
 const getNewURl = () => {
     fetch(apiUrl)
@@ -34,8 +37,14 @@ const generateHtml = (data) => {
 
 const generateNewActivity = document.getElementById('create-activity')
 generateNewActivity.addEventListener('click', (e) => {
+    // console.log(plsUserInput.value)
+    // apiData.type.value = plsUserInput.value
+    // console.log(apiData.type)
     getNewURl();
 })
+
+
+
 
 const themeChange = document.getElementById('theme-change')
 themeChange.addEventListener('click', () =>{
@@ -47,30 +56,18 @@ themeChange.addEventListener('click', () =>{
 const addToFavorites = document.getElementById('favorite')
 addToFavorites.addEventListener('click', ()=> {
     const favoriteActivity = document.createElement('li')
-    const favoriteActivityContainer = document.getElementById('favorites-bar')
     favoriteActivity.textContent = activityDiv.innerText
+    favorites.push(activityDiv.innerText)
     favoriteActivityContainer.append(favoriteActivity)
-favoriteActivity.forEach()
-
-const deleteButton = document.createElement('button')
-favoriteActivity.append(deleteButton)
-deleteButton.textContent = "delete"
-deleteButton.addEventListener('click',()=>{
- console.log("I was clicked")
-})
-// for(let i=0;i<favoriteActivity.length; i++){
-//     deleteButton.addEventListener('click',function(event){
-//         favoriteActivity.remove()
-
-//     })
-
-// }
-// favoriteActivityContainer.forEach(deleteFav =>{
-//     deleteButton.addEventListener("click",handleDelete)
-//     favoriteActivity.remove()
-//     })
-// deleteFav()
  })
- //function handleDelete()
 
-// handleDelete
+const sortByAlphabet = document.getElementById('sortByAlphabet')
+sortByAlphabet.addEventListener('click', () => {
+    favorites.sort()
+    favoriteActivityContainer.innerHTML = ""
+    favorites.forEach(str => {
+        const li = document.createElement("li")
+        li.innerText = str
+        favoriteActivityContainer.append(li)
+    })
+})
